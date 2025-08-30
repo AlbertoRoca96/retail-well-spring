@@ -104,7 +104,7 @@ nav .menu-icon:focus-visible{ outline:3px solid var(--focus); outline-offset:2px
 /* OPEN state (your JS toggles nav.active) */
 nav.active ul{ display:flex; }
 
-/* ===== Hero ===== */
+/* ===== Hero (kept for site-wide consistency; unused here but safe) ===== */
 #hero{
   position:relative;
   text-align:center;
@@ -151,7 +151,7 @@ nav.active ul{ display:flex; }
 }
 .cta-button:focus-visible{ outline:3px solid var(--focus); outline-offset:3px; }
 
-/* ===== Services ===== */
+/* ===== Services (site-wide) ===== */
 #services{
   display:flex;
   justify-content:center;
@@ -207,6 +207,30 @@ nav.active ul{ display:flex; }
   margin-bottom:40px;
   max-width:70ch;
   margin-inline:auto;
+}
+
+/* ===== Team / About – LinkedIn badge ===== */
+.linkedin-link{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  margin-left:.5rem;
+  color:var(--accent);
+  background:transparent;
+  padding:.1rem .25rem;
+  border-radius:6px;
+  vertical-align:middle;
+  line-height:1;
+}
+.linkedin-link:hover{ color:var(--accent-hover); }
+.linkedin-link:focus-visible{ outline:3px solid var(--focus); outline-offset:2px; }
+
+/* Visually hidden text for screen readers */
+.visually-hidden{
+  position:absolute !important;
+  width:1px; height:1px;
+  padding:0; margin:-1px; overflow:hidden;
+  clip:rect(0 0 0 0); white-space:nowrap; border:0;
 }
 
 /* ===== Footer ===== */

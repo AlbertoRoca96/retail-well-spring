@@ -31,21 +31,21 @@ header img {
     border-radius: 50%;
 }
 
-/* Navigation - Hidden by default */
+/* Navigation */
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
     margin-top: 15px;
+    padding-top: 20px;
 }
 
-/* Hide the menu by default on smaller screens */
+/* Hide the menu by default (for all screens) */
 nav ul {
     display: none;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-top: 20px;
 }
 
 nav ul li {
@@ -66,7 +66,7 @@ nav ul li a:hover {
 
 /* Hamburger Menu Icon */
 nav .menu-icon {
-    display: none; /* Hide hamburger by default */
+    display: block; /* Make the hamburger always visible */
     font-size: 30px;
     cursor: pointer;
     color: white;
@@ -191,18 +191,6 @@ footer a:hover {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-    /* Hide navigation links by default */
-    nav ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Show the hamburger icon on mobile */
-    .menu-icon {
-        display: block;
-    }
-
     /* When active, display the navigation menu */
     nav.active ul {
         display: flex;

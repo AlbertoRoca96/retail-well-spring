@@ -8,59 +8,85 @@
 /* Body */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #0C2340; /* Dark blue background */
-    color: #ffffff; /* White text */
+    background-color: #0a1e3f; /* Dark Blue Background */
+    color: #fff; /* White Text */
     line-height: 1.6;
 }
 
 /* Header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #1A237E; /* Dark blue header */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    background-color: #1c2b50; /* Dark blue for header */
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header .logo img {
+header img {
     max-width: 150px;
     border-radius: 50%;
 }
 
-/* Navigation Bar */
-.navbar ul {
+nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    margin-top: 15px;
 }
 
-.navbar ul li a {
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
-    text-transform: uppercase;
     transition: color 0.3s ease;
 }
 
-.navbar ul li a:hover {
-    color: #FFD700; /* Gold hover color */
+nav ul li a:hover {
+    color: #ff6347; /* Tomato color for hover effect */
 }
 
 /* Hamburger Menu */
-.menu-toggle {
+.hamburger-menu {
     display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
 }
 
-.menu-toggle .bar {
-    width: 25px;
-    height: 3px;
+.hamburger-menu .bar {
     background-color: #fff;
-    border-radius: 5px;
+    height: 5px;
+    width: 30px;
+    margin: 5px auto;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    nav.active ul {
+        display: block;
+    }
 }
 
 /* Hero Section */
@@ -69,23 +95,23 @@ header .logo img {
     background-image: url('assets/images/hero-background.jpg');
     background-size: cover;
     background-position: center;
-    padding: 100px 20px;
+    padding: 120px 20px;
     color: white;
 }
 
 #hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
 
 #hero p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin: 20px 0;
 }
 
 .cta-button {
-    background-color: #FFD700;
+    background-color: #ff6347;
     padding: 15px 25px;
     color: white;
     text-decoration: none;
@@ -96,16 +122,16 @@ header .logo img {
 }
 
 .cta-button:hover {
-    background-color: #FFB800;
+    background-color: #e55336; /* Darker tomato on hover */
 }
 
 /* Services Section */
 #services {
     display: flex;
     justify-content: space-around;
-    margin: 40px 0;
-    padding: 40px 0;
-    background-color: #e3f2fd;
+    margin: 60px 0;
+    padding: 60px 0;
+    background-color: #f4f4f4;
 }
 
 #services h2 {
@@ -143,8 +169,8 @@ header .logo img {
 /* Mission Section */
 #mission {
     background-color: #ffffff;
-    padding: 40px;
-    margin: 40px 0;
+    padding: 60px;
+    margin: 60px 0;
     text-align: center;
 }
 
@@ -163,51 +189,43 @@ header .logo img {
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #1c2b50;
     color: #fff;
-    padding: 20px;
+    padding: 30px 20px;
     text-align: center;
 }
 
 footer a {
-    color: #FFD700;
+    color: #ff6347;
     text-decoration: none;
     font-weight: bold;
 }
 
 footer a:hover {
-    color: #FFB800;
+    color: #e55336; /* Darker tomato on hover */
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
-    .navbar {
-        display: none;
-        width: 100%;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        background-color: #1A237E;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    .navbar ul {
+    #services {
         flex-direction: column;
         align-items: center;
-        width: 100%;
     }
 
-    .navbar ul li a {
-        padding: 10px;
-        width: 100%;
-        text-align: center;
+    #services .service {
+        width: 80%;
+        margin-bottom: 20px;
     }
 
-    .menu-toggle {
-        display: flex;
+    #hero h1 {
+        font-size: 2.5rem;
     }
 
-    .navbar.active {
-        display: flex;
+    #hero p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
     }
 }

@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Body */
+/* Body Styles */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #1a1a1a; /* Dark gray for background */
@@ -61,7 +61,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff5733; /* Orange hover effect for visibility */
+    color: #ff5733; /* Orange hover effect */
 }
 
 /* Hamburger Menu Icon */

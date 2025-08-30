@@ -8,89 +8,59 @@
 /* Body */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #1A237E; /* Dark Blue Background (Superhero Feel) */
-    color: #ffffff; /* White Text */
+    background-color: #0C2340; /* Dark blue background */
+    color: #ffffff; /* White text */
     line-height: 1.6;
 }
 
 /* Header */
 header {
-    background-color: #311B92; /* Dark Purple for header */
-    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #1A237E; /* Dark blue header */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-header img {
+header .logo img {
     max-width: 150px;
     border-radius: 50%;
 }
 
-nav ul {
+/* Navigation Bar */
+.navbar ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    margin-top: 15px;
+    gap: 20px;
 }
 
-nav ul li {
-    margin: 0 20px;
-}
-
-nav ul li a {
+.navbar ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
-    transition: all 0.3s ease;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #FFEB3B; /* Superhero Yellow Hover */
+.navbar ul li a:hover {
+    color: #FFD700; /* Gold hover color */
 }
 
 /* Hamburger Menu */
-nav .hamburger {
+.menu-toggle {
     display: none;
-    font-size: 30px;
+    flex-direction: column;
+    gap: 5px;
     cursor: pointer;
-    color: white;
 }
 
-nav ul {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: #311B92;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    nav ul li {
-        margin: 15px 0;
-    }
-
-    nav .hamburger {
-        display: block;
-    }
-
-    nav ul.show {
-        display: flex;
-    }
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
 }
 
 /* Hero Section */
@@ -99,25 +69,25 @@ nav ul {
     background-image: url('assets/images/hero-background.jpg');
     background-size: cover;
     background-position: center;
-    padding: 120px 20px;
+    padding: 100px 20px;
     color: white;
 }
 
 #hero h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
 
 #hero p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin: 20px 0;
 }
 
 .cta-button {
-    background-color: #FFEB3B; /* Superhero Yellow */
+    background-color: #FFD700;
     padding: 15px 25px;
-    color: #311B92;
+    color: white;
     text-decoration: none;
     font-size: 1.2rem;
     border-radius: 5px;
@@ -126,7 +96,7 @@ nav ul {
 }
 
 .cta-button:hover {
-    background-color: #F57F17; /* Darker Yellow Hover */
+    background-color: #FFB800;
 }
 
 /* Services Section */
@@ -193,43 +163,51 @@ nav ul {
 
 /* Footer */
 footer {
-    background-color: #311B92;
+    background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
 }
 
 footer a {
-    color: #FFEB3B;
+    color: #FFD700;
     text-decoration: none;
     font-weight: bold;
 }
 
 footer a:hover {
-    color: #F57F17;
+    color: #FFB800;
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
-    #services {
+    .navbar {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: #1A237E;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar ul {
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
-    #services .service {
-        width: 80%;
-        margin-bottom: 20px;
+    .navbar ul li a {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
     }
 
-    #hero h1 {
-        font-size: 2.5rem;
+    .menu-toggle {
+        display: flex;
     }
 
-    #hero p {
-        font-size: 1rem;
-    }
-
-    .cta-button {
-        font-size: 1rem;
+    .navbar.active {
+        display: flex;
     }
 }

@@ -18,9 +18,7 @@ header {
     background-color: #232f3e; /* Deep blue for the header */
     color: #fff;
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -28,13 +26,19 @@ header {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo */
 header img {
     max-width: 150px;
     border-radius: 50%;
 }
 
-/* Navigation - Hidden by default */
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Menu Items */
 nav ul {
     list-style: none;
     display: flex;
@@ -42,7 +46,7 @@ nav ul {
     margin-top: 15px;
 }
 
-/* Hide the menu by default on smaller screens */
+/* Hide the menu items by default on smaller screens */
 nav ul {
     display: none;
     flex-direction: column;
@@ -69,11 +73,15 @@ nav ul li a:hover {
 
 /* Hamburger Menu Icon */
 nav .menu-icon {
-    display: block; /* Ensure the hamburger menu is visible on all screens */
+    display: block; /* Always show hamburger on all screen sizes */
     font-size: 30px;
     cursor: pointer;
     color: white;
-    margin-top: 10px;
+}
+
+/* When active, show the menu items */
+nav.active ul {
+    display: flex;
 }
 
 /* Hero Section */
@@ -192,16 +200,14 @@ footer a:hover {
     color: #c04f29;
 }
 
-/* Mobile Styles */
+/* Mobile and Tablet Styles */
 @media (max-width: 768px) {
-    /* When active, display the navigation menu */
+    /* When active, display the menu items */
     nav.active ul {
         display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
     }
 
-    /* Adjust Hero Section */
+    /* Adjust the Hero Section */
     #hero h1 {
         font-size: 2.5rem;
     }

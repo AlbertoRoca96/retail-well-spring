@@ -1,108 +1,93 @@
-/* Global Styles */
-*,
-*::before,
-*::after {
+/* Basic Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #004d40; /* Dark Green Background */
+    color: #ffffff; /* White Text */
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
 }
 
 /* Header */
 header {
-    background-color: #004d40;
-    color: white;
+    background-color: #004d40; /* Dark Green for header */
+    color: #fff;
     padding: 20px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header img {
-    max-width: 120px;
+    max-width: 150px;
     border-radius: 50%;
 }
 
-/* Navigation */
 nav ul {
     list-style: none;
-    padding: 0;
-    text-align: center;
-    background-color: #00796b;
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
 }
 
 nav ul li {
-    display: inline-block;
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
+    font-size: 1.1rem;
     font-weight: bold;
-    padding: 10px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #004d40;
+    color: #FF9800; /* Hover color */
 }
 
 /* Hero Section */
 #hero {
-    background: url('assets/images/hero-background.jpg') center/cover no-repeat;
-    color: white;
     text-align: center;
-    padding: 80px 20px;
+    background-image: url('assets/images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    color: white;
 }
 
 #hero h1 {
     font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 #hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1.3rem;
+    margin: 20px 0;
 }
 
 .cta-button {
     background-color: #FF9800;
+    padding: 15px 25px;
     color: white;
-    padding: 15px 30px;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 1.2rem;
     border-radius: 5px;
-    display: inline-block;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #e68900;
-}
-
-/* Mission Section */
-#mission {
-    background-color: #e3f2fd;
-    padding: 40px;
-    margin: 40px 0;
-    text-align: center;
-}
-
-#mission h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-#mission p {
-    font-size: 1.1rem;
-    color: #555;
+    background-color: #FF7043;
 }
 
 /* Services Section */
@@ -110,49 +95,79 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-around;
     margin: 40px 0;
+    padding: 40px 0;
+    background-color: #e3f2fd;
 }
 
 #services h2 {
     font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
     text-align: center;
 }
 
 #services .service {
     width: 30%;
-    background-color: white;
-    padding: 30px;
+    background-color: #fff;
+    padding: 25px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 #services .service:hover {
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 #services .service h3 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 #services .service p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #555;
+}
+
+/* Mission Section */
+#mission {
+    background-color: #ffffff;
+    padding: 40px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+#mission h2 {
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#mission p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
 }
 
 /* Footer */
 footer {
     background-color: #333;
-    color: white;
+    color: #fff;
     padding: 20px;
     text-align: center;
 }
 
 footer a {
     color: #FF9800;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #FF7043;
 }
 
 /* Media Queries */
@@ -165,5 +180,17 @@ footer a {
     #services .service {
         width: 80%;
         margin-bottom: 20px;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
     }
 }

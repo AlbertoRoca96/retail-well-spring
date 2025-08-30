@@ -18,14 +18,17 @@ header {
     background-color: #232f3e; /* Deep blue for the header */
     color: #fff;
     padding: 20px;
-    text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between; /* Align logo and menu icon */
+    align-items: center;
 }
 
+/* Logo */
 header img {
     max-width: 150px;
     border-radius: 50%;
@@ -34,7 +37,6 @@ header img {
 /* Navigation */
 nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -44,13 +46,9 @@ nav ul {
     display: flex;
     justify-content: center;
     margin-top: 15px;
-}
-
-/* Hide the menu items by default on smaller screens */
-nav ul {
-    display: none;
+    display: none; /* Hide by default */
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end; /* Align items to the right */
     width: 100%;
     padding-top: 20px;
 }
@@ -73,15 +71,15 @@ nav ul li a:hover {
 
 /* Hamburger Menu Icon */
 nav .menu-icon {
-    display: block; /* Always show hamburger on all screen sizes */
     font-size: 30px;
     cursor: pointer;
     color: white;
+    display: block; /* Always visible */
 }
 
-/* When active, show the menu items */
+/* When active, display the menu items */
 nav.active ul {
-    display: flex;
+    display: flex; /* Show the menu when active */
 }
 
 /* Hero Section */
@@ -202,6 +200,19 @@ footer a:hover {
 
 /* Mobile and Tablet Styles */
 @media (max-width: 768px) {
+    /* Adjust menu items to be on the right */
+    nav ul {
+        align-items: flex-end; /* Align items to the right */
+        padding-right: 20px;
+    }
+
+    /* Show the hamburger icon on mobile */
+    .menu-icon {
+        display: block;
+        position: absolute;
+        right: 20px; /* Place hamburger menu on the right */
+    }
+
     /* When active, display the menu items */
     nav.active ul {
         display: flex;

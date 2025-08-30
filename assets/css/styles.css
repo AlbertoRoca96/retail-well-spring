@@ -62,13 +62,14 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem; /* Increased font size for readability */
     font-weight: bold;
     transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
     color: #ff5733; /* Orange hover effect for visibility */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Added text shadow for emphasis */
 }
 
 /* Hamburger Menu Icon */
@@ -98,11 +99,13 @@ nav.active ul {
     font-size: 3rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Added text shadow */
 }
 
 #hero p {
     font-size: 1.3rem;
     margin: 20px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Added text shadow */
 }
 
 .cta-button {
@@ -126,7 +129,7 @@ nav.active ul {
     justify-content: space-around;
     margin: 40px 0;
     padding: 40px 0;
-    background-color: #f0f0f0;
+    background-color: #2c3e50; /* Dark background for better contrast */
 }
 
 #services h2 {
@@ -135,15 +138,17 @@ nav.active ul {
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
+    color: white;
 }
 
 #services .service {
     width: 30%;
-    background-color: #fff;
+    background-color: #34495e; /* Lighter gray for cards */
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    color: white;
 }
 
 #services .service:hover {
@@ -158,7 +163,7 @@ nav.active ul {
 
 #services .service p {
     font-size: 1.1rem;
-    color: #555;
+    color: #ecf0f1; /* Lighter color for text */
 }
 
 /* Mission Section */

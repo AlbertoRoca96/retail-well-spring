@@ -1,7 +1,3 @@
-// Toggle Hamburger Menu visibility
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('nav ul');
-
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
+document.getElementById('mobile-menu').addEventListener('click', function () {
+    document.querySelector('.navbar').classList.toggle('active');
 });

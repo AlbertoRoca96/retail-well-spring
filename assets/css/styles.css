@@ -31,6 +31,7 @@ header img {
     border-radius: 50%;
 }
 
+/* Navigation - Hidden by default */
 nav ul {
     list-style: none;
     display: flex;
@@ -178,18 +179,26 @@ footer a:hover {
     color: #c04f29;
 }
 
-/* Media Queries */
+/* Mobile Styles */
 @media (max-width: 768px) {
-    #services {
+    /* Hide navigation links by default */
+    nav ul {
+        display: none;
         flex-direction: column;
         align-items: center;
     }
 
-    #services .service {
-        width: 80%;
-        margin-bottom: 20px;
+    /* Show the hamburger menu */
+    nav .menu-icon {
+        display: block;
     }
 
+    /* When the menu is active, display the navigation links */
+    nav ul.active {
+        display: flex;
+    }
+
+    /* Adjust Hero Section */
     #hero h1 {
         font-size: 2.5rem;
     }
@@ -202,21 +211,14 @@ footer a:hover {
         font-size: 1rem;
     }
 
-    /* Hamburger Menu */
-    nav .menu-icon {
-        display: block;
-    }
-
-    nav ul {
-        display: none;
-    }
-
-    nav ul.active {
-        display: flex;
+    /* Services Section */
+    #services {
         flex-direction: column;
+        align-items: center;
     }
 
-    nav ul li {
-        margin: 15px 0;
+    #services .service {
+        width: 80%;
+        margin-bottom: 20px;
     }
 }

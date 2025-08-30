@@ -7,13 +7,13 @@
 
 /* Body */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
     background-color: #1a1a1a; /* Dark gray background */
-    color: #fff;               /* White text for readability */
+    color: #fff; /* White text for readability */
     line-height: 1.7;
-    font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem); /* responsive base */
+    /* Comfortable responsive base size (~16→18→20px) */
+    font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
     text-rendering: optimizeLegibility;
-    color-scheme: dark;
 }
 
 /* Header */
@@ -26,15 +26,15 @@ header {
     top: 0;
     z-index: 1000;
     width: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    padding-top: max(20px, env(safe-area-inset-top));
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    padding-top: max(20px, env(safe-area-inset-top)); /* safe-area support */
 }
 
 /* Logo styling */
 header img {
-    max-width: 140px;
-    border-radius: 50%;
+    max-width: 150px;
     height: auto;
+    border-radius: 50%;
 }
 
 /* Navigation */
@@ -45,105 +45,108 @@ nav {
     width: 100%;
 }
 
-/* Menu Items (mobile-first: hidden by default) */
+/* Menu Items (desktop baseline) */
 nav ul {
     list-style: none;
+    display: flex;
+    justify-content: center;
     margin-top: 15px;
-    padding: 0;
-    display: none;                 /* hidden until nav.active */
+}
+
+/* Hide the menu items by default (you toggle nav.active with JS) */
+nav ul {
+    display: none;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding-top: 20px;
 }
 
-nav ul li { margin: 12px 0; }
+nav ul li {
+    margin: 15px 0;
+}
 
 /* Menu links */
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.15rem;           /* slightly smaller but responsive below */
+    font-size: clamp(1.05rem, 0.9rem + 0.6vw, 1.3rem); /* responsive */
     font-weight: 700;
-    padding: .5rem .75rem;        /* bigger touch target */
+    padding: .5rem .75rem;               /* larger touch area */
     border-radius: 8px;
     transition: color .2s ease, background-color .2s ease, text-shadow .2s ease;
 }
-nav ul li a:hover { color: #ff6b3b; }
+nav ul li a:hover {
+    color: #ff6b3b; /* Higher-contrast orange */
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
 nav ul li a:focus-visible {
-    outline: 3px solid #9bd1ff;
+    outline: 3px solid #9bd1ff;         /* visible keyboard focus */
     outline-offset: 3px;
-    text-shadow: none;
+    text-decoration: none;
 }
 
 /* Hamburger Menu Icon */
 nav .menu-icon {
-    display: block;               /* visible on mobile */
+    display: block;                      /* You prefer it visible on all sizes */
     font-size: 30px;
     cursor: pointer;
-    color: white;
-    margin-left: auto;            /* Align to the right */
-    padding: .5rem;               /* touch target */
+    color: #ffffff;
+    margin-left: auto;                   /* Align to the right */
+    padding: .5rem;                      /* touch target */
     border-radius: 10px;
+    transition: color .2s ease, background-color .2s ease;
 }
+nav .menu-icon:hover { color: #ff6b3b; }
 nav .menu-icon:focus-visible {
     outline: 3px solid #9bd1ff;
     outline-offset: 2px;
 }
 
-/* When active, show the menu items (works with your existing JS) */
-nav.active ul { display: flex; }
-
-/* Desktop: show full menu, hide hamburger */
-@media (min-width: 769px) {
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: auto;
-        padding-top: 0;
-        gap: 1rem;
-        margin-top: 10px;
-    }
-    nav .menu-icon { display: none; }
-    nav ul li { margin: 0; }
-    nav ul li a { font-size: clamp(1rem, 0.9rem + 0.3vw, 1.1rem); }
+/* When active, show the menu items */
+nav.active ul {
+    display: flex;
 }
 
 /* Hero Section */
 #hero {
     text-align: center;
-    color: white;
-    padding: clamp(5rem, 12vw, 9rem) 20px;
-    /* overlay for always-readable text */
-    background:
+    /* Overlay + image guarantees readable text */
+    background-image:
       linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.55)),
-      url('assets/images/hero-background.jpg') center / cover no-repeat;
+      url('assets/images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: clamp(80px, 12vw, 140px) 20px;
+    color: white;
 }
 #hero h1 {
     font-size: clamp(2.5rem, 4vw + 1rem, 4.5rem);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
     font-weight: 800;
+    line-height: 1.2;
     letter-spacing: .2px;
+    text-wrap: balance;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 #hero p {
     font-size: clamp(1.05rem, 0.9rem + 0.6vw, 1.35rem);
-    margin: 18px auto 22px;
+    margin: 20px auto;
     max-width: 55ch;
-    color: #cfd8e3;
-    text-wrap: pretty;
+    color: #e5ecf4;                      /* softer contrast body copy */
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
+/* CTA Button */
 .cta-button {
-    background-color: #ff6b3b;
-    padding: .9rem 1.2rem;
-    color: white;
+    background-color: #ff6b3b;           /* improved contrast */
+    padding: 15px 24px;
+    color: #fff;
     text-decoration: none;
     font-size: 1.1rem;
     border-radius: 10px;
     font-weight: 800;
-    min-height: 44px;             /* touch target */
+    min-height: 44px;                    /* accessible touch height */
     box-shadow: 0 4px 10px rgba(0,0,0,.25);
     transition: transform .15s ease, box-shadow .15s ease, background-color .2s ease;
 }
@@ -164,11 +167,11 @@ nav.active ul { display: flex; }
     margin: 40px 0;
     padding: 40px 0;
     background-color: #2c3e50; /* Dark background for better contrast */
-    flex-wrap: wrap;            /* Allow wrapping */
+    flex-wrap: wrap;  /* Allow for wrapping in services section */
 }
 #services h2 {
     font-size: clamp(2rem, 1.3rem + 2vw, 2.5rem);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
     font-weight: 800;
     margin-bottom: 20px;
     text-align: center;
@@ -176,18 +179,19 @@ nav.active ul { display: flex; }
     width: 100%;
 }
 #services .service {
-    width: 30%;
-    background-color: #34495e; /* Card surface */
+    /* Make cards responsive without changing your HTML */
+    width: min(32%, 380px);
+    background-color: #34495e; /* Lighter gray for cards */
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     transition: transform .18s ease, box-shadow .18s ease;
     color: white;
     margin: 20px;
 }
 #services .service:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
 }
 #services .service h3 {
     font-size: clamp(1.1rem, 0.9rem + 0.6vw, 1.35rem);
@@ -196,27 +200,26 @@ nav.active ul { display: flex; }
 }
 #services .service p {
     font-size: 1.05rem;
-    color: #cfd8e3; /* lighter body text */
+    color: #dbe5ef; /* Lighter color for text */
 }
 
 /* Mission Section */
 #mission {
-    background-color: #fff;
-    color: #111;
-    padding: clamp(2rem, 4vw, 3rem);
+    background-color: #ffffff;
+    padding: 40px;
     margin: 40px 0;
     text-align: center;
 }
 #mission h2 {
     font-size: clamp(2rem, 1.3rem + 2vw, 2.5rem);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
     font-weight: 800;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 #mission p {
     font-size: clamp(1.05rem, 0.9rem + 0.6vw, 1.25rem);
     color: #444;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
     max-width: 70ch;
     margin-inline: auto;
 }
@@ -229,37 +232,58 @@ footer {
     text-align: center;
 }
 footer a {
-    color: #ff6b3b;
+    color: #ff6b3b;      /* consistent accent color */
     text-decoration: none;
-    font-weight: 700;
+    font-weight: bold;
 }
-footer a:hover { color: #ff7a45; }
+footer a:hover {
+    color: #ff7a45;
+}
 footer a:focus-visible {
     outline: 3px solid #9bd1ff;
     outline-offset: 3px;
 }
 
-/* Smooth in-page anchor offsets below sticky header */
-:target { scroll-margin-top: 84px; }
+/* Keep anchors from hiding under the sticky header */
+:target {
+    scroll-margin-top: 84px;
+}
 
 /* Mobile and Tablet Styles */
 @media (max-width: 768px) {
     /* When active, display the menu items */
-    nav.active ul { display: flex; }
+    nav.active ul {
+        display: flex;
+    }
 
     /* Adjust the Hero Section */
-    #hero h1 { font-size: clamp(2rem, 6vw, 2.5rem); }
-    #hero p  { font-size: 1rem; }
-
-    .cta-button { font-size: 1rem; }
+    #hero h1 {
+        font-size: clamp(2rem, 6vw, 2.5rem);
+    }
+    #hero p {
+        font-size: 1rem;
+    }
+    .cta-button {
+        font-size: 1rem;
+    }
 
     /* Services Section */
-    #services { flex-direction: column; align-items: center; }
-    #services .service { width: 84%; margin-bottom: 20px; }
+    #services {
+        flex-direction: column;
+        align-items: center;
+    }
+    #services .service {
+        width: 88%;
+        margin-bottom: 20px;
+    }
 }
 
-/* Reduce motion for sensitive users */
+/* Respect users who prefer less motion */
 @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    * { transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+    * {
+        transition-duration: 0.001ms !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
 }

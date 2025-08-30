@@ -8,14 +8,14 @@
 /* Body */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #0A1E3F; /* Dark Blue Background */
-    color: #ffffff; /* White Text */
+    background-color: #0C2340; /* Dark Navy Blue Background */
+    color: #ffffff; /* White Text for clarity */
     line-height: 1.6;
 }
 
 /* Header */
 header {
-    background-color: #0A1E3F; /* Dark Blue for header */
+    background-color: #1A237E; /* Bold Blue Header */
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -23,14 +23,15 @@ header {
     top: 0;
     z-index: 1000;
     width: 100%;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 header img {
     max-width: 150px;
-    border-radius: 50%;
+    border-radius: 50%; /* Circular logo for dynamic branding */
 }
 
+/* Navigation Bar */
 nav ul {
     list-style: none;
     display: flex;
@@ -45,13 +46,14 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: bold;
+    text-transform: uppercase;
     transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #FFD700; /* Gold Hover Color */
+    color: #FFD700; /* Gold hover for superhero flair */
 }
 
 /* Hero Section */
@@ -62,16 +64,19 @@ nav ul li a:hover {
     background-position: center;
     padding: 100px 20px;
     color: white;
+    position: relative;
+    z-index: 1;
 }
 
 #hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    margin-bottom: 20px;
 }
 
 #hero p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin: 20px 0;
 }
 
@@ -80,10 +85,12 @@ nav ul li a:hover {
     padding: 15px 25px;
     color: white;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     border-radius: 5px;
     font-weight: bold;
     transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 30px;
 }
 
 .cta-button:hover {
@@ -96,7 +103,7 @@ nav ul li a:hover {
     justify-content: space-around;
     margin: 40px 0;
     padding: 40px 0;
-    background-color: #e3f2fd;
+    background-color: #ffffff;
 }
 
 #services h2 {
@@ -105,15 +112,17 @@ nav ul li a:hover {
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
+    color: #1A237E;
 }
 
 #services .service {
     width: 30%;
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 #services .service:hover {
@@ -170,7 +179,7 @@ footer a:hover {
     color: #FFB800;
 }
 
-/* Media Queries */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     #services {
         flex-direction: column;

@@ -39,12 +39,21 @@ nav ul {
     margin-top: 15px;
 }
 
+/* Hide the menu by default on smaller screens */
+nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px;
+}
+
 nav ul li {
-    margin: 0 20px;
+    margin: 10px 0;
 }
 
 nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
@@ -55,12 +64,13 @@ nav ul li a:hover {
     color: #ff5733; /* Orange hover effect for visibility */
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu Icon */
 nav .menu-icon {
-    display: none;
-    font-size: 2rem;
-    color: #fff;
+    display: none; /* Hide hamburger by default */
+    font-size: 30px;
     cursor: pointer;
+    color: white;
+    margin-top: 10px;
 }
 
 /* Hero Section */
@@ -188,13 +198,13 @@ footer a:hover {
         align-items: center;
     }
 
-    /* Show the hamburger menu */
-    nav .menu-icon {
+    /* Show the hamburger icon on mobile */
+    .menu-icon {
         display: block;
     }
 
-    /* When the menu is active, display the navigation links */
-    nav ul.active {
+    /* When active, display the navigation menu */
+    nav.active ul {
         display: flex;
     }
 

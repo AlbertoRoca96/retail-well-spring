@@ -1,42 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retail Well Spring</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Retail Well Spring</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+
+  <!-- Immediate redirect fallback (non-JS / legacy) -->
+  <meta http-equiv="refresh" content="0; url=https://albertoroca96.github.io/retail-inventory-tracker/">
+
+  <script>
+    // Redirect as soon as possible, without adding to history
+    // Add ?no-redirect to the URL to preview the home page without redirecting.
+    (function () {
+      var target = "https://albertoroca96.github.io/retail-inventory-tracker/";
+      if (location.search.includes("no-redirect")) return;
+
+      // If prerendering, wait until visible
+      if (document.visibilityState === "prerender") {
+        document.addEventListener("visibilitychange", function onVis() {
+          if (document.visibilityState === "visible") {
+            document.removeEventListener("visibilitychange", onVis);
+            location.replace(target);
+          }
+        });
+      } else {
+        location.replace(target);
+      }
+    })();
+  </script>
 </head>
 <body>
-    <header>
-        <img src="assets/images/logo.png" alt="Retail Well Spring Logo">
-        <nav>
-            <!-- Hamburger Menu Icon -->
-            <span class="menu-icon">☰</span>
+  <header>
+    <img src="assets/images/logo.png" alt="Retail Well Spring Logo">
+    <nav>
+      <!-- Hamburger Menu Icon (your JS toggles nav.active) -->
+      <span class="menu-icon" tabindex="0" aria-label="Toggle navigation">☰</span>
 
-            <!-- Navigation Links -->
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="case-studies.html">Case Studies</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="hero">
-            <h1>Combating Food Waste Through Retail Auditing</h1>
-            <p>Empowering brands with actionable insights to reduce waste and enhance sustainability.</p>
-            <a href="contact.html" class="cta-button">Get Started</a>
-        </section>
-        <section id="mission">
-            <h2>Our Mission</h2>
-            <p>At Retail Well Spring, we are dedicated to providing comprehensive retail auditing services that help brands identify inefficiencies, optimize inventory, and reduce food waste. One of the key tools in this effort is the <a href="https://github.com/AlbertoRoca96/retail-inventory-tracker" target="_blank">Retail Inventory Tracker</a>, a mobile-first application built using Expo (React Native) and Supabase. This tool facilitates the field audits by allowing users to create and view audit submissions, attach photos, and download and share the data.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Retail Well Spring | <a href="contact.html">Contact Us</a></p>
-    </footer>
-    <script src="scripts/main.js"></script>
+      <!-- Navigation Links -->
+      <ul>
+        <li><a href="index.html?no-redirect=1">Home</a></li>
+        <li><a href="about.html?no-redirect=1">About Us</a></li>
+        <li><a href="services.html?no-redirect=1">Services</a></li>
+        <li><a href="case-studies.html?no-redirect=1">Case Studies</a></li>
+        <li><a href="contact.html?no-redirect=1">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Fallback content in case JS is disabled or meta refresh is blocked -->
+    <section id="hero">
+      <h1>Redirecting you to sign up…</h1>
+      <p>You’re being sent to our Retail Inventory Tracker sign-up.</p>
+      <a
+        class="cta-button"
+        href="https://albertoroca96.github.io/retail-inventory-tracker/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Go to Sign Up</a>
+    </section>
+
+    <section id="mission">
+      <h2>Our Mission</h2>
+      <p>At Retail Well Spring, we are dedicated to providing comprehensive retail auditing services that help brands identify inefficiencies, optimize inventory, and reduce food waste. One of the key tools in this effort is the
+        <a href="https://github.com/AlbertoRoca96/retail-inventory-tracker" target="_blank" rel="noopener noreferrer">Retail Inventory Tracker</a>, a mobile-first application built using Expo (React Native) and Supabase. This tool facilitates the field audits by allowing users to create and view audit submissions, attach photos, and download and share the data.</p>
+      <p><em>Tip:</em> Append <code>?no-redirect=1</code> to this page’s URL if you need to preview the homepage without redirecting.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Retail Well Spring | <a href="contact.html?no-redirect=1">Contact Us</a></p>
+  </footer>
+
+  <script src="scripts/main.js"></script>
 </body>
 </html>

@@ -8,16 +8,16 @@
 /* Body */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #0a1e3f; /* Dark Blue Background */
-    color: #fff; /* White Text */
+    background-color: #1a1a1a; /* Dark gray for background */
+    color: #fff; /* White text for readability */
     line-height: 1.6;
 }
 
 /* Header */
 header {
-    background-color: #1c2b50; /* Dark blue for header */
+    background-color: #232f3e; /* Deep blue for the header */
     color: #fff;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     position: sticky;
     top: 0;
@@ -47,46 +47,19 @@ nav ul li a {
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ff6347; /* Tomato color for hover effect */
+    color: #ff5733; /* Orange hover effect for visibility */
 }
 
 /* Hamburger Menu */
-.hamburger-menu {
+nav .menu-icon {
     display: none;
-}
-
-.hamburger-menu .bar {
-    background-color: #fff;
-    height: 5px;
-    width: 30px;
-    margin: 5px auto;
-    transition: 0.3s;
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-    }
-
-    nav ul li {
-        margin: 15px 0;
-    }
-
-    .hamburger-menu {
-        display: block;
-        cursor: pointer;
-    }
-
-    nav.active ul {
-        display: block;
-    }
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
 }
 
 /* Hero Section */
@@ -100,18 +73,18 @@ nav ul li a:hover {
 }
 
 #hero h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
 
 #hero p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin: 20px 0;
 }
 
 .cta-button {
-    background-color: #ff6347;
+    background-color: #ff5733;
     padding: 15px 25px;
     color: white;
     text-decoration: none;
@@ -122,16 +95,16 @@ nav ul li a:hover {
 }
 
 .cta-button:hover {
-    background-color: #e55336; /* Darker tomato on hover */
+    background-color: #c04f29;
 }
 
 /* Services Section */
 #services {
     display: flex;
     justify-content: space-around;
-    margin: 60px 0;
-    padding: 60px 0;
-    background-color: #f4f4f4;
+    margin: 40px 0;
+    padding: 40px 0;
+    background-color: #f0f0f0;
 }
 
 #services h2 {
@@ -168,9 +141,9 @@ nav ul li a:hover {
 
 /* Mission Section */
 #mission {
-    background-color: #ffffff;
-    padding: 60px;
-    margin: 60px 0;
+    background-color: #fff;
+    padding: 40px;
+    margin: 40px 0;
     text-align: center;
 }
 
@@ -189,20 +162,20 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: #1c2b50;
+    background-color: #232f3e;
     color: #fff;
-    padding: 30px 20px;
+    padding: 20px;
     text-align: center;
 }
 
 footer a {
-    color: #ff6347;
+    color: #ff5733;
     text-decoration: none;
     font-weight: bold;
 }
 
 footer a:hover {
-    color: #e55336; /* Darker tomato on hover */
+    color: #c04f29;
 }
 
 /* Media Queries */
@@ -227,5 +200,23 @@ footer a:hover {
 
     .cta-button {
         font-size: 1rem;
+    }
+
+    /* Hamburger Menu */
+    nav .menu-icon {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 15px 0;
     }
 }

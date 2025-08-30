@@ -1,4 +1,4 @@
-/* Basic-Reset */
+/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
@@ -22,9 +22,11 @@ header {
 }
 
 header img {
-    max-width: 100px;
+    max-width: 100px; /* Removed white space around logo */
+    border-radius: 50%; /* Ensures logo hugs the globe */
 }
 
+/* Navigation */
 nav ul {
     list-style: none;
     padding: 0;

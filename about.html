@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Retail Well Spring</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Retail Well Spring</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
 </head>
 <body>
-    <header>
-        <img src="assets/images/logo.png" alt="Retail Well Spring Logo">
-        <nav>
-            <!-- Hamburger Menu Icon -->
-            <span class="menu-icon">☰</span>
+  <header>
+    <img src="assets/images/logo.png" alt="Retail Well Spring Logo"/>
 
-            <!-- Navigation Links -->
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="case-studies.html">Case Studies</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="team">
-            <h2>Meet Our Team</h2>
-            <p><strong>Austin Carlson</strong> – Managing Partner</p>
-            <p>I began my work in the food industry during the summer of 2018 doing retail audits for Rosati’s Ice out of Clifton Heights PA. After learning the ropes from the team at Rosati’s, I launched my own retail auditing service the following year. COVID-19 took a toll on my business, but in that I am alike many in this time. In the advent of the new age we find ourselves in, I am focused in my objective of providing an effective and efficient service for those I work with professionally.</p>
-        </section>
-        <section id="values">
-            <h2>Our Values</h2>
-            <p>We are committed to integrity, sustainability, and community. Our goal is to foster transparency and trust in every aspect of our work. Our partnership with the Retail Inventory Tracker further supports this mission by ensuring that audits are conducted in the most efficient and eco-friendly manner possible.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Retail Well Spring | <a href="contact.html">Contact Us</a></p>
-    </footer>
-    <script src="scripts/main.js"></script>
+    <nav>
+      <!-- Hamburger Menu Icon (your JS toggles nav.active) -->
+      <span class="menu-icon" tabindex="0" aria-label="Toggle navigation">☰</span>
+
+      <!-- Navigation Links -->
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="team">
+      <h2>Meet Our Team</h2>
+
+      <p>
+        <strong>Austin Carlson</strong> – Managing Partner
+        <a class="linkedin-link"
+           href="https://www.linkedin.com/in/austin-carlson-6a889322b/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Open Austin Carlson&#39;s LinkedIn profile">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
+            <path fill="currentColor" d="M22.225 0H1.771C.792 0 0 .774 0 1.729V22.27C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0zM6.99 20.452H3.68V9h3.31v11.452zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.352V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.368-1.852 3.602 0 4.268 2.372 4.268 5.456v6.287z"/>
+          </svg>
+          <span class="visually-hidden">LinkedIn</span>
+        </a>
+      </p>
+
+      <p>
+        I began my work in the food industry during the summer of 2018 doing retail audits for Rosati’s Ice out of Clifton Heights PA. After learning the ropes from the team at Rosati’s, I launched my own retail auditing service the following year. COVID-19 took a toll on my business, but in that I am alike many in this time. In the advent of the new age we find ourselves in, I am focused in my objective of providing an effective and efficient service for those I work with professionally.
+      </p>
+    </section>
+
+    <section id="values">
+      <h2>Our Values</h2>
+      <p>We are committed to integrity, sustainability, and community. Our goal is to foster transparency and trust in every aspect of our work. Our partnership with the Retail Inventory Tracker further supports this mission by ensuring that audits are conducted in the most efficient and eco-friendly manner possible.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Retail Well Spring | <a href="contact.html">Contact Us</a></p>
+  </footer>
+
+  <script src="scripts/main.js"></script>
 </body>
 </html>

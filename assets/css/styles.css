@@ -58,14 +58,14 @@ nav ul {
 }
 
 nav ul li {
-    margin: 10px 0;
+    margin: 15px 0; /* Increased margin for better spacing */
 }
 
 /* Menu links */
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.2rem; /* Increased font size for readability */
+    font-size: 1.3rem; /* Increased font size for readability */
     font-weight: bold;
     transition: all 0.3s ease;
 }
@@ -243,3 +243,4 @@ footer a:hover {
         margin-bottom: 20px;
     }
 }
+

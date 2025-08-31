@@ -129,7 +129,36 @@ nav.active ul {
   display: flex;
 }
 
-/* ===== Contact Us ===== */
+/* ===== Hero Section (Updated) ===== */
+#hero {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: clamp(5rem, 12vw, 9rem) 20px;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)),
+    url('assets/images/hero-background.jpg') center/cover no-repeat;
+}
+
+#hero h1 {
+  font-size: clamp(2.5rem, 4vw + 1rem, 4.5rem);
+  font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: .2px;
+  text-wrap: balance;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .6);
+}
+
+#hero p {
+  font-size: clamp(1.05rem, 0.9rem + 0.6vw, 1.35rem);
+  margin: 20px auto;
+  max-width: 55ch;
+  color: var(--text-subtle);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .5);
+}
+
+/* ===== Contact Section ===== */
 #contact-info {
   padding: 3rem 0;
   background-color: var(--surface);
@@ -215,29 +244,6 @@ nav.active ul {
 .social-links img {
   width: 24px;
   height: 24px;
-}
-
-/* LinkedIn Badge */
-.linkedin-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-left: 0.5rem;
-  color: var(--accent);
-  background: transparent;
-  padding: 0.1rem 0.25rem;
-  border-radius: 6px;
-  vertical-align: middle;
-  line-height: 1;
-}
-
-.linkedin-link:hover {
-  color: var(--accent-hover);
-}
-
-.linkedin-link:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 2px;
 }
 
 /* ===== Footer ===== */

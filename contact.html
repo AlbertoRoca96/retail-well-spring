@@ -33,9 +33,18 @@
                     <p><strong>Working Hours:</strong> Mon-Fri 7 a.m. - 6 p.m.</p>
                 </address>
 
+                <!-- Location Switcher -->
+                <div id="location-selector">
+                    <label for="location">Choose a Location:</label>
+                    <select id="location" onchange="updateMap()">
+                        <option value="orwigsburg">Orwigsburg, PA</option>
+                        <option value="farmville">Farmville, VA</option>
+                    </select>
+                </div>
+
                 <!-- Map Section -->
                 <div class="map">
-                    <iframe
+                    <iframe id="google-map"
                         src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=325+West+Market+Street,+Orwigsburg,+PA,+17961&zoom=10"
                         width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
@@ -77,5 +86,19 @@
     </footer>
 
     <script src="scripts/main.js"></script>
+    <script>
+        function updateMap() {
+            const location = document.getElementById('location').value;
+            let mapSrc = '';
+
+            if (location === 'orwigsburg') {
+                mapSrc = "https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=325+West+Market+Street,+Orwigsburg,+PA,+17961&zoom=10";
+            } else if (location === 'farmville') {
+                mapSrc = "https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=1006+Fourth+Avenue,+Farmville,+VA,+23901&zoom=10";
+            }
+
+            document.getElementById('google-map').src = mapSrc;
+        }
+    </script>
 </body>
 </html>

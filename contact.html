@@ -1,36 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Retail Well Spring</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Retail Well Spring</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-    <header>
-        <img src="assets/images/logo.png" alt="Retail Well Spring Logo">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="case-studies.html">Case Studies</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <span class="menu-icon">☰</span>
-        </nav>
-    </header>
-    <main>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Email: <a href="mailto:rwsretailservice@gmail.com">rwsretailservice@gmail.com</a></p>
-            <p>Phone: <a href="tel:+16039434852">603-943-4852</a></p>
-            <p>Address: 325 West Market Street, Orwigsburg, PA, 17961</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Retail Well Spring | <a href="contact.html">Contact Us</a></p>
-    </footer>
-    <script src="scripts/main.js"></script>
+  <header>
+    <img src="assets/images/logo.png" alt="Retail Well Spring Logo" />
+    <nav>
+      <!-- Hamburger Menu Icon -->
+      <span class="menu-icon">☰</span>
+
+      <!-- Navigation Links -->
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="contact-info">
+      <h2>Get in Touch with Us</h2>
+      <p>Connect with Accurate Retail Counting for precise inventory auditing services.</p>
+
+      <div class="contact-details">
+        <address>
+          <p><strong>Location:</strong> Deltona, Florida, 32725</p>
+          <p><strong>Phone:</strong> 1-407-449-1004</p>
+          <p><strong>Email:</strong> <a href="mailto:PhilipHines@ARCInventory.com">PhilipHines@ARCInventory.com</a></p>
+          <p><strong>Working Hours:</strong> Mon-Fri 7 a.m. - 6 p.m.</p>
+        </address>
+
+        <!-- Map Section -->
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31351.587572430687!2d-81.29213764069714!3d28.89837451656652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e5b204cc58f02d%3A0x7776d6d52d9d2e5b!2sDeltona%2C%20FL%2032725!5e0!3m2!1sen!2sus!4v1677262648427!5m2!1sen!2sus"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <img src="assets/images/facebook-icon.png" alt="Facebook" />
+          </a>
+          <a href="https://linkedin.com/in/austin-carlson-6a889322b/" target="_blank" aria-label="LinkedIn">
+            <img src="assets/images/linkedin-icon.png" alt="LinkedIn" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact-form">
+      <h2>Contact Us</h2>
+      <p>Book our inventory services for precise financial auditing in the United States. Contact us today!</p>
+      <form action="your-form-handler.php" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+
+        <div class="terms">
+          <label>
+            <input type="checkbox" name="terms" required /> I agree to the <a href="terms.html">Terms & Conditions</a> and <a href="privacy.html">Privacy Policy</a>
+          </label>
+        </div>
+
+        <!-- hCaptcha -->
+        <div class="hcaptcha">
+          <div class="h-captcha" data-sitekey="your-site-key"></div>
+        </div>
+
+        <button type="submit" class="cta-button">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Retail Well Spring | <a href="contact.html">Contact Us</a></p>
+  </footer>
+
+  <script src="scripts/main.js"></script>
 </body>
 </html>
